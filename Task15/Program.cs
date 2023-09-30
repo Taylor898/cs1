@@ -1,18 +1,33 @@
 ﻿Console.WriteLine("Enter n");
 int n = Convert.ToInt32(Console.ReadLine());
 
-while(n > 0 && n < 8)
+bool IsWeekend(int n)
 {
-    if(n == 6 && n == 7)
+    if (n > 5)
     {
-        Console.WriteLine("Its wknd");
-        break;
+        return true;
+    }
+    return false;
+}
+
+bool ValidateWeekday (int n)
+{
+    if (n > 0 && n <= 7)
+    {
+        return true;
+    }
+    Console.WriteLine("This is not a day of the week");
+    return false;
+}
+
+if (ValidateWeekday(n))
+{
+    if (IsWeekend(n))
+    {
+        Console.WriteLine("weekend");
     }
     else
     {
-        Console.WriteLine("its wrkd");
-        break;
+        Console.WriteLine("Working day");
     }
 }
-
-Console.WriteLine("sadf");
